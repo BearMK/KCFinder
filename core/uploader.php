@@ -121,7 +121,7 @@ class uploader {
 
         // SET CMS INTEGRATION ATTRIBUTE
         if (isset($this->get['cms']) &&
-            in_array($this->get['cms'], array("drupal"))
+            in_array($this->get['cms'], array("drupal", "zf2"))
         )
             $this->cms = $this->get['cms'];
 
@@ -141,6 +141,7 @@ class uploader {
             ini_set('session.cookie_domain', $_CONFIG['_sessionDomain']);
         switch ($this->cms) {
             case "drupal": break;
+            case "zf2":
             default: session_start(); break;
         }
 
@@ -150,7 +151,7 @@ class uploader {
 
         // LOAD SESSION CONFIGURATION IF EXISTS
         if (isset($_CONFIG['_sessionVar']) &&
-            is_array($_CONFIG['_sessionVar'])
+           (is_array($_CONFIG['_sessionVar']) || $_CONFIG['_sessionVar'] instanceof ArrayAccess)
         ) {
             foreach ($_CONFIG['_sessionVar'] as $key => $val)
                 if ((substr($key, 0, 1) != "_") && isset($_CONFIG[$key]))
