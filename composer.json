@@ -1,0 +1,24 @@
+{
+    "name" : "dino/kcfinder-zf2",
+    "description" : "KCFinder lib with integration support for ZF2.",
+    "type" : "library",
+    "version" : "1.0.0-dev",
+    "keywords" : ["kcfinder", "js", "zf2", "image manager"],
+    "homepage" : "https://github.com/raykolbe/KCFinder",
+    "license" : [
+        "GPL-2",
+        "LGPL-2.1"
+    ],
+    "require" : {
+        "php" : ">=5.3.3",
+        "zendframework/zendframework" : "2.1.*"
+    },
+    "authors" : [
+        {
+            "name" : "Raymond Kolbe",
+            "email" : "rkolbe@gmail.com",
+            "homepage" : "http://raymondkolbe.com",
+            "role" : "Developer"
+        }
+    ]
+}
