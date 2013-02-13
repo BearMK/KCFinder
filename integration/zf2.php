@@ -14,12 +14,12 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * This software consists of voluntary contributions made by many individuals
- * and is licensed under the MIT license.
+ * and is licensed under the LGPLv2 license.
  */
 
 /**
  * @author Raymond J. Kolbe <rkolbe@gmail.com>
- * @license http://opensource.org/licenses/MIT
+ * @license http://www.opensource.org/licenses/lgpl-2.1.php LGPLv2
  */
 
 spl_autoload_register('__autoload');
