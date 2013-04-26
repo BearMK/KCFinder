@@ -201,14 +201,18 @@ class uploader {
         // COOKIES INIT
         $ip = '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)';
         $ip = '/^' . implode('\.', array($ip, $ip, $ip, $ip)) . '$/';
+        
         if (preg_match($ip, $_SERVER['HTTP_HOST']) ||
             preg_match('/^[^\.]+$/', $_SERVER['HTTP_HOST'])
-        )
+        ) {
             $this->config['cookieDomain'] = "";
-        elseif (!strlen($this->config['cookieDomain']))
-            $this->config['cookieDomain'] = $_SERVER['HTTP_HOST'];
-        if (!strlen($this->config['cookiePath']))
-            $this->config['cookiePath'] = "/";
+        } elseif (!strlen($this->config['cookieDomain'])) {
+            $this->config['cookieDomain'] = ini_get('session.cookie_domain');
+        }
+        
+        if (!strlen($this->config['cookiePath'])) {
+            $this->config['cookiePath'] = ini_get('session.cookie_path');
+        }
 
         // UPLOAD FOLDER INIT
 
